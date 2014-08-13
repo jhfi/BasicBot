@@ -19,6 +19,9 @@ class AsynchatBot(asynchat.async_chat):
         self.sendLine("USER " + config.nick + " " + config.nick + " " + config.nick + " :" + config.nick)
         self.sendLine("NICK " + config.nick)
 
+    def handle_error(self):
+        raise
+
     def get_data(self):
         r = self.data
         self.data = ''
