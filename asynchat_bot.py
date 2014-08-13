@@ -58,6 +58,9 @@ class AsynchatBot(asynchat.async_chat):
                     acmd = msg[1:]  # after command char
                     aspl = acmd.split(" ")
                     cmd = aspl[0].upper()
+                    if cmd == "HELLO":
+                        self.sendLine("PRIVMSG "+ds[2]+" :Hello!")
+
 
 
 if __name__ == '__main__':
